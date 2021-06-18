@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1C6831267C7FCD00ED2AD9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0C1C6830267C7FCD00ED2AD9 /* README.md */; };
 		0C828DC9267B4BC2000CCE68 /* BLETableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C828DC8267B4BC2000CCE68 /* BLETableVC.swift */; };
 		0C828DCB267B82FF000CCE68 /* BLECell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C828DCA267B82FF000CCE68 /* BLECell.swift */; };
 		0C828DCE267B991D000CCE68 /* BLEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C828DCD267B991D000CCE68 /* BLEModel.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C1C6830267C7FCD00ED2AD9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C828DC8267B4BC2000CCE68 /* BLETableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLETableVC.swift; sourceTree = "<group>"; };
 		0C828DCA267B82FF000CCE68 /* BLECell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECell.swift; sourceTree = "<group>"; };
 		0C828DCD267B991D000CCE68 /* BLEModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEModel.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		0CDBC669267A552E00655A9B = {
 			isa = PBXGroup;
 			children = (
+				0C1C6830267C7FCD00ED2AD9 /* README.md */,
 				0CDBC674267A552E00655A9B /* BLEMonitor */,
 				0CDBC673267A552E00655A9B /* Products */,
 			);
@@ -177,6 +180,7 @@
 			files = (
 				0CDBC682267A552F00655A9B /* LaunchScreen.storyboard in Resources */,
 				0CDBC67F267A552F00655A9B /* Assets.xcassets in Resources */,
+				0C1C6831267C7FCD00ED2AD9 /* README.md in Resources */,
 				0CDBC67D267A552E00655A9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

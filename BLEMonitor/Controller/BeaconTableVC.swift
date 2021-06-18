@@ -11,7 +11,7 @@ import CoreLocation
 class BeaconTableVC: UITableViewController {
 
   var beacons = [CLBeaconIdentityConstraint: [CLBeacon]]()
-  var detailVC: DetailBeaconVC?
+  weak var detailVC: DetailBeaconDelegate? //DetailBeaconVC?
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let detailVC = segue.destination as? DetailBeaconVC

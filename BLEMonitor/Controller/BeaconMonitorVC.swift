@@ -28,8 +28,7 @@ class BeaconVC: UIViewController {
     if let beaconsTableVC = segue.destination as? BeaconTableVC {
       self.beaconTableVC = beaconsTableVC
     }
-    
-    
+  
   }
   
   override func viewDidLoad() {
@@ -53,12 +52,10 @@ class BeaconVC: UIViewController {
       locationManager.stopRangingBeacons(satisfying: regionBeacon.beaconIdentityConstraint)
     }
     
-    
   }
 
 }
-
-  
+ 
 //MARK: CLLocationManagerDelegate
 extension BeaconVC: CLLocationManagerDelegate {
   
@@ -86,8 +83,8 @@ extension BeaconVC: CLLocationManagerDelegate {
     beaconTableVC.beacons[beaconConstraint] = beacons.sorted(by: {$1.accuracy > $0.accuracy })
     beaconTableVC.tableView.reloadData()
      
-    //beacons.forEach
-      //{ print("\($0.proximity.rawValue) \($0.rssi) \($0.uuid) \($0.major) \($0.minor) \($0.accuracy)") }
+    beacons.forEach
+      { print("\($0.proximity.rawValue) \($0.rssi) \($0.uuid) \($0.major) \($0.minor) \($0.accuracy)") }
   }
     
   func startMonitoring() {

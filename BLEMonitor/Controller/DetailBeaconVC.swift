@@ -8,23 +8,28 @@
 import UIKit
 import CoreLocation
 
+protocol DetailBeaconDelegate: AnyObject {
+  var index: (section: Int, row: Int)? {get set}
+  func updateLabel(section: Int, row: Int, beacon: CLBeacon)
+}
+
 class DetailBeaconVC: UIViewController {
 
-  @IBOutlet weak var uuidLabel: UILabel!
-  @IBOutlet weak var majorLabel: UILabel!
-  @IBOutlet weak var minorLabel: UILabel!
-  @IBOutlet weak var rssiLabel: UILabel!
-  @IBOutlet weak var distanceLabel: UILabel!
+  @IBOutlet private weak var uuidLabel: UILabel!
+  @IBOutlet private weak var majorLabel: UILabel!
+  @IBOutlet private weak var minorLabel: UILabel!
+  @IBOutlet private weak var rssiLabel: UILabel!
+  @IBOutlet private weak var distanceLabel: UILabel!
   
   var index: (section: Int, row: Int)?
   
-  @IBAction func closeTouch() {
+  @IBAction private func closeTouch() {
     dismiss(animated: true, completion: nil)
   }
 }
 
 
-extension DetailBeaconVC {
+extension DetailBeaconVC: DetailBeaconDelegate {
   
   func updateLabel(section: Int, row: Int, beacon: CLBeacon) {
     guard self.index?.row == row && self.index?.section == section else { return }
