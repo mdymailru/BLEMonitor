@@ -8,11 +8,6 @@
 import UIKit
 import CoreLocation
 
-protocol DetailBeaconDelegate: AnyObject {
-  var index: (section: Int, row: Int)? {get set}
-  func updateLabel(section: Int, row: Int, beacon: CLBeacon)
-}
-
 class DetailBeaconVC: UIViewController {
 
   @IBOutlet private weak var uuidLabel: UILabel!

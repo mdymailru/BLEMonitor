@@ -8,16 +8,14 @@
 import CoreLocation
 
 struct Beacon {
-  var name = "mdyBeacon"
-  var UUID = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6"
-  var major = 1
-  var minor = 0
+  var name: String
+  var UUID: String
+  var major: Int
+  var minor: Int
   
 }
 
 class BeaconMonitoringModel {
-  
-  var regions = [Beacon()]
   
   func getBeaconRegion(_ beacon: Beacon) -> CLBeaconRegion {
     switch (beacon.major, beacon.minor) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C066C66267FD4700045A752 /* DetailVCDelegatePr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C066C65267FD4700045A752 /* DetailVCDelegatePr.swift */; };
 		0C1C6831267C7FCD00ED2AD9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0C1C6830267C7FCD00ED2AD9 /* README.md */; };
 		0C828DC9267B4BC2000CCE68 /* BLETableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C828DC8267B4BC2000CCE68 /* BLETableVC.swift */; };
 		0C828DCB267B82FF000CCE68 /* BLECell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C828DCA267B82FF000CCE68 /* BLECell.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C066C65267FD4700045A752 /* DetailVCDelegatePr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCDelegatePr.swift; sourceTree = "<group>"; };
 		0C1C6830267C7FCD00ED2AD9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C828DC8267B4BC2000CCE68 /* BLETableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLETableVC.swift; sourceTree = "<group>"; };
 		0C828DCA267B82FF000CCE68 /* BLECell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECell.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C066C67267FD4F20045A752 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0C066C65267FD4700045A752 /* DetailVCDelegatePr.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		0C828DCC267B98E2000CCE68 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 				0CDBC67E267A552F00655A9B /* Assets.xcassets */,
 				0CDBC680267A552F00655A9B /* LaunchScreen.storyboard */,
 				0CDBC683267A552F00655A9B /* Info.plist */,
+				0C066C67267FD4F20045A752 /* Protocol */,
 			);
 			path = BLEMonitor;
 			sourceTree = "<group>";
@@ -196,6 +207,7 @@
 				0CDBC676267A552E00655A9B /* AppDelegate.swift in Sources */,
 				0CDBC678267A552E00655A9B /* SceneDelegate.swift in Sources */,
 				0C828DD8267C17BC000CCE68 /* RegionCell.swift in Sources */,
+				0C066C66267FD4700045A752 /* DetailVCDelegatePr.swift in Sources */,
 				0C828DCB267B82FF000CCE68 /* BLECell.swift in Sources */,
 				0C828DC9267B4BC2000CCE68 /* BLETableVC.swift in Sources */,
 				0C828DD6267BC0A1000CCE68 /* BeaconModel.swift in Sources */,

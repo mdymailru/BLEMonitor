@@ -11,14 +11,14 @@ import CoreLocation
 
 class BeaconVC: UIViewController {
 
-  @IBOutlet var regionsContainer: UIView!
+  @IBOutlet private var regionsContainer: UIView!
   
-  var regionTableVC: RegionTableVC!
-  var beaconTableVC: BeaconTableVC!
+  private var regionTableVC: RegionTableVC!
+  private var beaconTableVC: BeaconTableVC!
   
-  var model = BeaconMonitoringModel()
+  private var model = BeaconMonitoringModel()
   
-  let locationManager = CLLocationManager()
+  private let locationManager = CLLocationManager()
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
@@ -33,9 +33,7 @@ class BeaconVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    regionTableVC.regions = model.regions
-   
+       
     locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
     
@@ -70,6 +68,8 @@ extension BeaconVC: CLLocationManagerDelegate {
         manager.startRangingBeacons(satisfying: regionBeacon.beaconIdentityConstraint)
       case .outside:
         print("out region: \(regionBeacon.uuid)")
+        beaconTableVC.beacons.removeAll()
+        beaconTableVC.tableView.reloadData()
         manager.stopRangingBeacons(satisfying: regionBeacon.beaconIdentityConstraint)
       default:
         print("no state")
@@ -80,6 +80,7 @@ extension BeaconVC: CLLocationManagerDelegate {
                 didRange beacons: [CLBeacon],
      satisfying beaconConstraint: CLBeaconIdentityConstraint) {
     
+    //beaconTableVC.beacons.removeAll()
     beaconTableVC.beacons[beaconConstraint] = beacons.sorted(by: {$1.accuracy > $0.accuracy })
     beaconTableVC.tableView.reloadData()
      
@@ -87,11 +88,11 @@ extension BeaconVC: CLLocationManagerDelegate {
       { print("\($0.proximity.rawValue) \($0.rssi) \($0.uuid) \($0.major) \($0.minor) \($0.accuracy)") }
   }
     
-  func startMonitoring() {
-    for beacon in model.regions {
-      let beconRegion = model.getBeaconRegion(beacon)
+  private func startMonitoring() {
+    for region in regionTableVC.regions {
+      let beconRegion = model.getBeaconRegion(region)
       locationManager.startMonitoring(for: beconRegion)
-      print("start monitoring: \(beconRegion.uuid) \(beconRegion.major ?? -1) \(beconRegion.minor ?? -1)")
+      print("start monitoring: \(beconRegion.uuid) \(beconRegion.major ?? 0) \(beconRegion.minor ?? 0)")
     }
   }
   

@@ -10,10 +10,10 @@ import CoreBluetooth
 
 class BLETableVC: UITableViewController {
 
-  var centralManager: CBCentralManager!
-  var BLEItemDic = [UUID: BLEDevices]()
-  var BLEItem = [BLEDevices]()
-  var timer: Timer?
+  private var centralManager: CBCentralManager!
+  private var BLEItemDic = [UUID: BLEDevices]()
+  private var BLEItem = [BLEDevices]()
+  private var timer: Timer?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -78,13 +78,13 @@ extension BLETableVC: CBCentralManagerDelegate {
     tableView.reloadData()
   }
   
-  func startScanBLE() {
+  private func startScanBLE() {
     guard centralManager.state == .poweredOn else { return }
     BLEItemDic.removeAll()
     centralManager.scanForPeripherals(withServices: nil, options: nil)
   }
   
-  @objc func reloadScan() {
+  @objc private func reloadScan() {
     BLEItemDic.removeAll()
     centralManager.stopScan()
     startScanBLE()
